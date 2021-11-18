@@ -14,5 +14,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	restoredFile, err := st.GetByID(file.ID)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("map", st.Files)
 	fmt.Println("it uploaded", file)
+	fmt.Println("it restored", restoredFile)
 }
